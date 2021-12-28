@@ -3,19 +3,22 @@ import numpy as np
 import random
 
 # Specify your CIFAR-10 folder path
-cifar_folder_path = ""
+cifar_folder_path = "C:/Users/sants/Downloads/cifar-10-batches-py/"
 
 
+# Load the CIFAR-10 data
 def unpickle(file):
     with open(file, 'rb') as f:
         dict = pickle.load(f, encoding="latin1")
     return dict
 
 
+# Print progress of the classification process
 def print_progress(prog):
     print('\r[{0}] {1}%'.format('#' * (prog // 10), prog), end="")
 
 
+# Load CIFAR-10 test data
 def load_test_data():
     datadict = unpickle(cifar_folder_path + 'test_batch')
     test_data = datadict["data"]
@@ -27,6 +30,7 @@ def load_test_data():
     return test_data, test_labels
 
 
+# Load CIFAR-10 training data
 def load_training_data():
     tr_data = None
     tr_labels = []
@@ -46,7 +50,7 @@ def load_training_data():
     return tr_data, tr_labels
 
 
-# Old evaluation
+# Calculate the classification accuracy
 def class_acc(pred, gt):
     classification_count = len(pred)
     classification_err = 0
@@ -61,6 +65,6 @@ def class_acc(pred, gt):
 
 
 # Random classifier
-def cifar10_classifier_random(x):
+def random_classifier(x):
     random_label = random.randint(0, 9)
     return random_label
