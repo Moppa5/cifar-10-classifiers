@@ -68,7 +68,7 @@ def cifar10_classifier_naivebayes(x, mu, sigma, p):
 
 
 def run_naive_bayes(tr_data, tr_labels, test_data, test_labels):
-    print("\n--- Task 1: Naive bayes 1x1 ---")
+    print("\n--- Naive bayes 1x1 ---")
     mu, sigma, p = cifar10_naivebayes_learn(tr_data, tr_labels)
     naive_bayes_pred = []
 
@@ -137,7 +137,7 @@ def main():
     run_naive_bayes(Xp, tr_labels, test_data, test_labels)
 
     # Bayes going through 1x1 2x2 4x4...
-    print("--- Task 2 & 3: Different sizes ---")
+    print("--- Bayes with different sizes ---")
     dimension_list = [1, 2, 4, 8, 16, 32]
 
     for d in dimension_list:
