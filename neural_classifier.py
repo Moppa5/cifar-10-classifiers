@@ -1,7 +1,5 @@
-import pickle
 import numpy as np
 import cifar_common
-import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, MaxPooling2D, Conv2D, Flatten, Input
